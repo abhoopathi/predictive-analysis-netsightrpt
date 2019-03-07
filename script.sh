@@ -1,0 +1,1 @@
+/opt/conda/bin/python /run_all_script_beta_scheduled_agg.py >> /var/log/full_log.log 2>&1 
