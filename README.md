@@ -27,6 +27,7 @@ Poping data from db is takes more time , so that we decided to  put the 90 days 
 
 Below given is the flow of data .
 
+
 ![image.png](attachment:image.png)
 
 ### parquet file creation
@@ -73,9 +74,9 @@ Some of the main docker commmands are :
 
 * **docker build -t beta_agg_reports_30d_and_48h  .**  :- to create docker image , here beta_agg_reports_30d_and_48h is the docker image name .
 * **docker run --name beta_agg_repo_30d_and_48h -it -d  --cpuset-cpus='0-4' beta_agg_reports_30d_and_48h**  :- to create and run docker container , here beta_agg_repo_30d_and_48h is the container name , which uses only 4 cpu cores .
-* **docker exec -i -t beta_agg_repo_30d_and_48h /bin/bash ** :- to get inside the docker container in interactive mode .
+* **docker exec -i -t beta_agg_repo_30d_and_48h /bin/bash** :- to get inside the docker container in interactive mode .
 * **docker stop beta_agg_repo_30d_48h** :- used to stop the container.
-* **docker rm beta_agg_repo_30d_48h ** :- used to remove the container.
+* **docker rm beta_agg_repo_30d_48h** :- used to remove the container.
 * **docker rmi beta_agg_reports_30d_48h** :- used to remove the image.
 
 ## DB details
@@ -156,7 +157,7 @@ The columns used in this table are :
 
 Here all columns (user_count, bw, application, source and location) are not present in all reports , it varies as per the combination.
 
-for **App Response time per application (P1) ** [both 30days and 48hrs pediction] :
+for **App Response time per application (P1)** [both 30days and 48hrs pediction] :
 
 * analyse_apprsptime_per_source_per_app and analyse_apprsptime_per_source_per_app_48hrs
 * forecast_apprsptime_per_source_per_app and forecast_apprsptime_per_source_per_app_48hrs
@@ -164,7 +165,7 @@ for **App Response time per application (P1) ** [both 30days and 48hrs pediction
 * data_apprsptime_per_source_per_app and data_apprsptime_per_source_per_app_48hrs
 
 
-for **Number of applications (P2) ** [both 30days and 48hrs pediction] :
+for **Number of applications (P2)** [both 30days and 48hrs pediction] :
 
 * analyse_nofapp_per_source and analyse_nofapp_per_source_48hrs
 * forecast_nofapp_per_source and forecast_nofapp_per_source_48hrs
@@ -179,7 +180,7 @@ for **Number of users per application (P3)** [both 30days and 48hrs pediction] :
 * data_nofusers_per_app_per_source and data_nofusers_per_app_per_source_48hrs
 
 
-for **Number users per location (P6) ** [both 30days and 48hrs pediction] :
+for **Number users per location (P6)** [both 30days and 48hrs pediction] :
 
 * analyse_nofusers_per_location and analyse_per_location_48hrs
 * forecast_nofusers_per_location and forecast_per_location_48hrs
@@ -195,7 +196,7 @@ for **Bandwidth per location (P7)** [both 30days and 48hrs pediction] :
 * data_bw_per_location and data_bw_per_location_48hrs
 
 
-for **Number of users per source (P8) ** [both 30days and 48hrs pediction] :
+for **Number of users per source (P8)** [both 30days and 48hrs pediction] :
 
 * analyse_nofusers_per_source and analyse_nofusers_per_source_48hrs
 * forecast_nofusers_per_source and forecast_nofusers_per_source_48hrs
@@ -211,7 +212,7 @@ for **Bandwidth per source (P9)** [both 30days and 48hrs pediction] :
 * data_bw_per_source and data_bw_per_source_48hrs
 
 
-for **Bandwidth per application (P10) ** [both 30days and 48hrs pediction] :
+for **Bandwidth per application (P10)** [both 30days and 48hrs pediction] :
 
 * analyse_bw_per_app_per_source and analyse_bw_per_app_per_source_48hrs
 * forecast_bw_per_app_per_source and forecast_bw_per_app_per_source_48hrs
@@ -219,4 +220,4 @@ for **Bandwidth per application (P10) ** [both 30days and 48hrs pediction] :
 * data_bw_per_app_per_source and data_bw_per_app_per_source_48hrs
 
 
-_ Here for all tables we doing partitioning to avoid the crash in output (end-user side) while writing the new results to table _
+_Here for all tables we doing partitioning to avoid the crash in output (end-user side) while writing the new results to table_
