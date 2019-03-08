@@ -27,6 +27,7 @@ Poping data from db is takes more time , so that we decided to  put the 90 days 
 
 Below given is the flow of data .
 
+
 ![image.png](attachment:image.png)
 
 ### parquet file creation
